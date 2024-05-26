@@ -1,0 +1,15 @@
+{
+  "applicationName": "IMDB Clone",
+  "main": {
+    "tabs": {
+      "home": "Home",
+      "search": "Search",
+      "video": "Video",
+      "profile": "Profile"
+    }
+  },
+  "home": {
+    "trendingThisWeek": "Trending this week",
+    "topRated": "Top Rated"
+  }
+}
