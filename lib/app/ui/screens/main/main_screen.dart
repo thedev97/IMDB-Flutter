@@ -1,18 +1,19 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:imdb_flutter/app/ui/screens/main/home/home.dart';
+import 'package:imdb_flutter/app/ui/screens/main/home/home_view_model.dart';
 import 'package:imdb_flutter/app/ui/screens/main/profile/profile.dart';
 import 'package:imdb_flutter/app/ui/screens/main/search/search.dart';
 import 'package:imdb_flutter/app/ui/screens/main/video/video.dart';
+import 'package:imdb_flutter/app/ui/screens/main/widgets/bottom_navigation.dart';
 
-class Main extends StatefulWidget {
-  const Main({super.key});
+class IMDBMain extends StatefulWidget {
+  const IMDBMain({super.key});
 
   @override
-  State<Main> createState() => _MainState();
+  State<IMDBMain> createState() => _IMDBMainState();
 }
 
-class _MainState extends State<Main> {
+class _IMDBMainState extends State<IMDBMain> {
   final _pageController = PageController(initialPage: 0);
 
   @override
@@ -26,9 +27,16 @@ class _MainState extends State<Main> {
     return Scaffold(
         body: PageView(
           controller: _pageController,
-          children: const [Home(), Search(), Video(), Profile()],
+          children: [
+            IMDBHome(
+              viewModel: IMDBHomeViewModel(),
+            ),
+            const IMDBSearch(),
+            const IMDBVideo(),
+            const IMDBProfile()
+          ],
         ),
         bottomNavigationBar:
-            BottomNavigationBar();
+            IMDBBottomNavigationBar(pageController: _pageController));
   }
 }

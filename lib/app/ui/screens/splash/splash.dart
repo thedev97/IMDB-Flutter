@@ -30,7 +30,7 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.appBackground,
+      backgroundColor: AppColors.primary,
       body: Center(
         child: SvgPicture.asset(AppIcons.appLogo, height: 200),
       ),

@@ -4,6 +4,6 @@ import 'package:imdb_flutter/app/navigation/app_route.dart';
 
 class SplashViewModel{
   void goToHome(BuildContext context){
-    context.goNamed(AppRoute.home);
+    context.goNamed(AppRoute.main);
   }
 }
